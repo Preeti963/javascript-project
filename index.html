@@ -2,51 +2,49 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App -Easy </title>
+    <title>Weather App - Easy</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    div class="card">
+
+    <div class="card">
         <div class="search">
-            <input type="text" placeholder="Enter city name"
-            spellcheck="false">
-            <button><img src="images/search.png"></button>
+            <input 
+                type="text" 
+                placeholder="Enter city name" 
+                spellcheck="false">
+            <button>
+                <img src="images/search.png" alt="Search">
+            </button>
         </div>
+
         <div class="weather">
-            <img src="images/rain2.png" class="weather-icon">
+            <img src="images/rain2.png" class="weather-icon" alt="WeatherIcon">
             <h1 class="temp">21°C</h1>
             <h2 class="city">Kathmandu</h2>
+
             <div class="details">
                 <div class="col">
-                     <img scr="images/humidity.png">
-                     <div>
-                     <p class="humidity">67%</p>
-                     <p>Humidity</p>
-               </div>
+                    <img src="images/humidity.png" alt="Humidity">
+                    <div>
+                        <p class="humidity">67%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+
                 <div class="col">
-                  <img scr="images/wind.png">
-                  <div>
-                    <p class="wind">2 km/h</p>
-                    <p>Wind Speed</p>
-                 </div>
+                    <img src="images/wind.png" alt="Wind">
+                    <div>
+                        <p class="wind">2 km/h</p>
+                        <p>Wind Speed</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        const apiKey = "f2bd741d7b17e3572d9d8d0171961135";
-    const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=Kathmandu&units=metric";
 
-    async function checkWeather() {
-        const response = await fetch(apiUrl + `&appid=${apiKey}`);
-        const data = await response.json();
-        console.log(data);
-        document.querySelector(".city").innerHTML = data.name;
-        document.querySelector(".temp").innerHTML = data.main.temp;
-        document.querySelector(".humidity").innerHTML = data.main.humidity;
-    }
+    <!-- Link JavaScript file -->
+    <script src="script.js"></script>
 
-checkWeather();
-</script>
 </body>
 </html>
